@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main_page</title>
+    <link rel="stylesheet" href="\static\css.css" />
+      <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+    body {
+      background-image: url('/static/lung_image.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+
+    }
+    .input-container {
+      margin-left:300px;
+      background-color: rgba(255, 255, 255, 0.53);
+      backdrop-filter: blur(4px);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      width: 600px;
+    }
+label {
+  font-size: 1.2em;
+  color: #34495e;
+
+  display: block;
+  margin: 15px 0 5px;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="head">
+      <h1>
+          Lung Cancer Prediction
+      </h1>
+        <div>
+        <a href="{{ url_for('data') }}" class="data">data</a>||<a href="{{ url_for('accuracy') }}" class="accuracy">accuracy</a>||<a href="{{ url_for('Data_Analytics') }}" class="da">Data Analytics</a>
+        </div>
+    </div>
+
+    <div class="input-container">
+       <form method="post" action="/main_page">
+           <label>GENDER:   </label>
+          <select name="Gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+           <label> AGE:   </label>
+           <input type="text" name="age" placeholder="enter the age" required><br><br>
+           <label>SMOKING:   </label>
+           <select name="name1">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+           <label>YELLOW_FINGERS:   </label>
+           <select name="name2">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+           <label>ANXIETY:   </label>
+           <select name="name3">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+           <label>PEER_PRESSURE:   </label>
+           <select name="name4">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+           <label>CHRONIC DISEASE:   </label>
+           <select name="name5">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+           <label>FATIGUE:   </label>
+           <select name="name6">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+           <label>ALLERGY:   </label>
+           <select name="name7">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+           <label>WHEEZING:   </label>
+           <select name="name8">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+           <label>ALCOHOL CONSUMING:   </label>
+           <select name="name9">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+           <label>COUGHING:   </label>
+           <select name="name10">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+           <label>SHORTNESS OF BREATH:   </label>
+           <select name="name11">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+           <label>SWALLOWING DIFFICULTY:   </label>
+           <select name="name12">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+           <label>CHEST PAIN:   </label>
+           <select name="name13">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select><br><br>
+
+
+           <label>Model:   </label>
+           <select name="name">
+
+               <option value="SVR">XGBClassifier</option>
+               <option value="RFC">Random Forest Classifier</option>
+               <option value="GBC">Gradient Boosting Classifier</option>
+           </select>
+            <br><br>
+
+        <button class="button"><h4>submit</h4></button>
+        </form>
+        <p class="pre">Do You Have Lung Cancer : {{ prediction }}</p>
+
+
+
+    </div>
+
+  </body>
+</html>

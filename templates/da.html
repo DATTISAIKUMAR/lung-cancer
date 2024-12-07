@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="\static\css.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+    body {
+      background-image: url('/static/lung_image.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+
+    }
+      .input-container {
+      color:white;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <h1>
+        Lung Cancer Prediction
+      </h1>
+      <div>
+        <a href="{{ url_for('home') }}" class="data">Home</a>||<a href="{{ url_for('data') }}" class="accuracy">Data</a>||<a href="{{ url_for('accuracy') }}" class="da">Accuracy</a>
+      </div>
+    </div>
+
+    <div>
+      <img src="{{ url_for('static', filename='Data images/age.png') }}" style="height:400px;width:600px;">
+      <img src="{{ url_for('static', filename='Data images/alcohol.png') }}" class="said" style="height:400px;width:600px;">
+    </div>
+    <div>
+      <img src="{{ url_for('static', filename='Data images/breath.png') }}" style="height:400px;width:600px;">
+      <img src="{{ url_for('static', filename='Data images/chest.png') }}" class="said" style="height:400px;width:600px;">
+    </div>
+    <div>
+      <img src="{{ url_for('static', filename='Data images/corr.png') }}" style="height:400px;width:600px;">
+      <img src="{{ url_for('static', filename='Data images/coughing.png') }}" class="said" style="height:400px;width:600px;">
+    </div>
+    <div>
+      <img src="{{ url_for('static', filename='Data images/gender.png') }}" style="height:400px;width:600px;">
+      <img src="{{ url_for('static', filename='Data images/lda.png') }}" class="said" style="height:400px;width:600px;">
+    </div>
+
+  </body>
+</html>

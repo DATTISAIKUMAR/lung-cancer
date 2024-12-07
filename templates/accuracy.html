@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main_page</title>
+    <link rel="stylesheet" href="\static\css.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+    body {
+      background-image: url('/static/lung_image.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+
+    }
+      .input-container {
+      color:white;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <h1>
+         Lung Cancer Prediction
+      </h1>
+     <div class="margin">
+        <a href="{{ url_for('home') }}" class="da">        Home           </a>||<a href="{{ url_for('data') }}" class="data">     data            </a>||<a href="{{ url_for('Data_Analytics') }}" class="da">        Data Analytics           </a>
+        </div>
+    </div>
+
+  <div class="input-container">
+    <h4>Accuracy of the model:</h4>
+     <h6>{{r2_score}}</h6>
+    </div>
+  <div>
+      <img src="{{ url_for('static', filename='accuracy/gbccm.png') }}" style="height:400px;width:600px;">
+      <img src="{{ url_for('static', filename='accuracy/rfccm.png') }}" class="said" style="height:400px;width:600px;">
+    </div>
+  <img src="{{ url_for('static', filename='accuracy/Figure_1.png') }}" style="height:400px;width:600px;">
+
+  </body>
+</html>

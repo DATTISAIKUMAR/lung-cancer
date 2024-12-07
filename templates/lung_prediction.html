@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction</title>
+
+    <style>
+        body {
+            background-image: url('/static/lung_image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h2 {
+            font-size: 2em;
+            margin: 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #1a5987;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Lung Cancer Prediction</h1>
+    <h2>Let's Test Your Lungs</h2>
+    <a href="{{url_for('main_page')}}">
+        <button>Start Test</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main_page</title>
+    <link rel="stylesheet" href="\static\css.css" />
+      <style>
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+    body {
+      background-image: url('/static/lung_image.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+
+    }
+    .input-container {
+      color:white;
+    }
+      </style>
+  </head>
+  <body>
+
+    <div class="head">
+      <h1>
+          Lung Cancer Prediction
+      </h1>
+         <div>
+        <a href="{{ url_for('home') }}" class="data">home</a>||<a href="{{ url_for('accuracy') }}" class="accuracy">accuracy</a>||<a href="{{ url_for('Data_Analytics') }}" class="da">Data Analytics</a>
+            </div>
+    </div>
+
+
+    <div class="input-container">
+      <table>
+          <thead><td>GENDER</td><td>AGE</td><td>SMOKING</td><td>YELLOW_FINGERS</td><td>ANXIETY</td><td>PEER_PRESSURE</td><td>CHRONIC DISEASE</td><td>FATIGUE</td><td>ALLERGY</td><td>WHEEZING</td><td>ALCOHOL CONSUMING</td><td>COUGHING</td><td>SHORTNESS OF BREATH</td><td>SWALLOWING DIFFICULTY</td><td>CHEST PAIN</td><td>LUNG_CANCER</td></thead>
+
+      {%for i in range(0,data_set.shape[0])%}
+      <tr>
+            {%for j in range(0,data_set.shape[1])%}
+                  <td>{{data_set.iloc[i,j]}}</td>
+            {%endfor%}
+      </tr>
+      {%endfor%}
+      </table>
+    </div>
+
+  </body>
+</html>
